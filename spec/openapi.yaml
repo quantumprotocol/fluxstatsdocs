@@ -1,0 +1,415 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1
+  title: Flux API
+  contact:
+    email: tadeas@zel.network
+    url: 'https://docs.fluxapi.runonflux.io'
+  license:
+    name: GNU AGPLv3
+    url: 'https://www.gnu.org/licenses/agpl-3.0.en.html'
+  x-logo:
+    url: 'https://raw.githubusercontent.com/runonflux/fluxdocs/master/flux.jpg'
+  description: >-
+    This is an API documentation of calls available to be made to Flux API.
+    <br>
+    GET Calls are available as both query and in order as path.
+    <br>
+    Flux API is completely open source and we encourage everyone to feel free and
+    contribute :)
+    <br>
+    Further questions or support join and ask in our [discord](https://discord.io/runonflux)
+
+
+    # Introduction
+
+    Flux API is a collection of API's being used to collect
+    all data needed by Flux Stats Dashboard 
+
+    # Getting Started with the API
+
+    1. You can use browser directly to access the API's
+
+
+
+    2. You can also use any client tools such as postman or soap ui to access the API's
+
+externalDocs:
+  description: Flux API
+  url: 'https://github.com/runonflux/fluxapi'
+tags:
+  - name: Flux Info
+    description: Request that are neccessary for collecting node data
+  - name: Flux History
+    description: Request that are neccessary for collecting ip history 
+  - name: Flux Versions
+    description: Request that are neccessary for collecting flux version
+  - name: Flux Locations
+    description: Request that are neccessary for collecting node locations
+  - name: Flux Locations Now
+    description: Request that are neccessary for collecting node locations
+  - name: Flux History Stats
+    description: Request that are neccessary for collecting total node per tier at a specific round time
+  - name: Stored Locations
+    description: Request that are neccessary for collecting node locations
+  - name: Available Times
+    description: Request that are neccessary for collecting round time
+servers:
+  - url: 'https://stats.runonflux.io/'
+paths:
+  /fluxinfo?projections=ip,node:
+    get:
+      tags:
+        - Flux Info
+      summary: Request
+      description: >-
+        Collect node information based on different projections namely
+        ip, addedHeight, lastPaidHeight, tier, activeSince, confirmedHeight,
+        lastConfirmedHeight, collateralHash, collateralIndex, paymentAddress,
+        roundTime, dataCollectedAt, geolocation, daemon, node, benchmark,
+        flux, apps, appsHashesTotal, hashesPresent, scannedHeight, connectionsOut
+        and connectionsIn.
+        
+        
+        Note: If projection query param is not included by default all projections will be included
+      operationId: fluxinfo
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: array
+                    description: Data set based on projections
+              example:
+                status: success
+                data: [
+                  {
+                    "daemon": {
+                      "info": {
+                        "version": 6000050,
+                        "protocolversion": 170018,
+                        "walletversion": 60000,
+                        "blocks": 1114873,
+                        "timeoffset": 0,
+                        "connections": 29,
+                        "proxy": "",
+                        "difficulty": 39720.23651105958,
+                        "testnet": false,
+                        "keypoololdest": 1648846206,
+                        "keypoolsize": 101,
+                        "paytxfee": 0,
+                        "relayfee": 1e-06,
+                        "errors": ""
+                      }
+                    },
+                    "ip": "65.108.218.208"
+                  },
+                  {
+                    "daemon": {
+                      "info": {
+                        "version": 6000050,
+                        "protocolversion": 170018,
+                        "walletversion": 60000,
+                        "blocks": 1114873,
+                        "timeoffset": 0,
+                        "connections": 16,
+                        "proxy": "",
+                        "difficulty": 39720.23651105958,
+                        "testnet": false,
+                        "keypoololdest": 1649797155,
+                        "keypoolsize": 101,
+                        "paytxfee": 0,
+                        "relayfee": 1e-06,
+                        "errors": ""
+                      }
+                    },
+                    "ip": "65.108.142.240:16167"
+                  },
+                ]
+  /fluxhistory/ip/ip=127.0.0.1:
+    get:
+      tags:
+        - Flux History
+      summary: Request
+      description: >-
+        Collect history information based on ip
+
+
+        Note: Query param is required
+      operationId: fluxhistory
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: array
+                    description: Data set based on ip
+              example:
+                status: success
+                data: []
+  /fluxversions:
+    get:
+      tags:
+        - Flux Versions
+      summary: Request
+      description: Collect all node information about flux versions
+      operationId: fluxversions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: array
+                    description: Flux Version Node Information
+              example:
+                status: success
+                data: [
+                  {
+                    "ip": "45.91.132.241",
+                    "daemon": 6000050,
+                    "benchmark": "3.2.0",
+                    "flux": "3.16.0"
+                  },
+                  {
+                    "ip": "89.58.7.28",
+                    "daemon": 6000050,
+                    "benchmark": "3.2.0",
+                    "flux": "3.16.0"
+                  },
+                ]
+  /fluxlocations:
+    get:
+      tags:
+        - Flux Locations
+      summary: Request
+      description: Collect all information about flux node location
+      operationId: fluxlocations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: array
+                    description: Geolocation Node Information
+              example:
+                status: success
+                data: [
+                  {
+                    "geolocation": {
+                      "ip": "65.108.142.240",
+                      "continent": null,
+                      "continentCode": null,
+                      "country": "Finland",
+                      "countryCode": "FI",
+                      "region": "18",
+                      "regionName": "Uusimaa",
+                      "lat": 60.1719,
+                      "lon": 24.9347,
+                      "org": "Hetzner Online GmbH"
+                    }
+                  },
+                  {
+                    "geolocation": {
+                      "ip": "65.108.151.25",
+                      "continent": null,
+                      "continentCode": null,
+                      "country": "Finland",
+                      "countryCode": "FI",
+                      "region": "18",
+                      "regionName": "Uusimaa",
+                      "lat": 60.1719,
+                      "lon": 24.9347,
+                      "org": "Hetzner Online GmbH"
+                    }
+                  },
+                ]
+  /fluxlocationsnow:
+    get:
+      tags:
+        - Flux Locations Now
+      summary: Request
+      description: Collect all information about flux node location
+      operationId: fluxlocationsnow
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: array
+                    description: Geolocation Node Information
+              example:
+                status: success
+                data: [
+                  {
+                    "ip": "1.40.239.80",
+                    "continent": "Oceania",
+                    "continentCode": "OC",
+                    "country": "Australia",
+                    "countryCode": "AU",
+                    "region": "NSW",
+                    "regionName": "New South Wales",
+                    "lat": -33.8715,
+                    "lon": 151.2006,
+                    "org": "Optus Internet Pty Ltd",
+                    "_id": "62678bf2d84e62ea130fd2db"
+                  },
+                  {
+                    "ip": "1.40.239.80",
+                    "continent": "Oceania",
+                    "continentCode": "OC",
+                    "country": "Australia",
+                    "countryCode": "AU",
+                    "region": "NSW",
+                    "regionName": "New South Wales",
+                    "lat": -33.8715,
+                    "lon": 151.2006,
+                    "org": "Optus Internet Pty Ltd",
+                    "_id": "62690d45b348863465c72570"
+                  },
+                ]
+  /fluxhistorystats:
+    get:
+      tags:
+        - Flux History Stats
+      summary: Request
+      description: Collect all total nodes per tier at a specific round time
+      operationId: fluxhistorystats
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: object
+                    description: Total nodes per tier at a specific round time
+              example:
+                status: success
+                data: {
+                  "1650945381809": {
+                    "cumulus": 7743,
+                    "nimbus": 1792,
+                    "stratus": 1526
+                  },
+                  "1651045052336": {
+                    "cumulus": 7794,
+                    "nimbus": 1814,
+                    "stratus": 1534
+                  }
+                }
+  /storedlocations:
+    get:
+      tags:
+        - Stored Locations
+      summary: Request
+      description: Collect all stored location information
+      operationId: storedlocations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: array
+                    description: Stored Location Information
+              example:
+                status: success
+                data: [
+                  {
+                    "ip": "1.40.239.80",
+                    "continent": "Oceania",
+                    "continentCode": "OC",
+                    "country": "Australia",
+                    "countryCode": "AU",
+                    "region": "NSW",
+                    "regionName": "New South Wales",
+                    "lat": -33.8715,
+                    "lon": 151.2006,
+                    "org": "Optus Internet Pty Ltd",
+                  },
+                  {
+                    "ip": "1.40.239.80",
+                    "continent": "Oceania",
+                    "continentCode": "OC",
+                    "country": "Australia",
+                    "countryCode": "AU",
+                    "region": "NSW",
+                    "regionName": "New South Wales",
+                    "lat": -33.8715,
+                    "lon": 151.2006,
+                    "org": "Optus Internet Pty Ltd",
+                  },
+                ]
+  /availabletimes:
+    get:
+      tags:
+        - Available Times
+      summary: Request
+      description: Collect all roundtime data
+      operationId: availabletimes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/status'
+                  data:
+                    type: array
+                    description: Round Time Information
+              example:
+                status: success
+                data: [
+                  1650945381809,
+                  1651045052336
+                ]
+components:
+  schemas:
+    status:
+      type: string
+      description: Explanation of status
+      enum:
+        - success
+        - error

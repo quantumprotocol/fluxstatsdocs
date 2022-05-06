@@ -1,0 +1,29 @@
+{
+  "name": "fluxapidocs",
+  "version": "0.0.1",
+  "author": "Flux Foundation",
+  "license": "GNU AGPLv3",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/runonflux/fluxapidocs.git"
+  },
+  "description": "Flux documentation",
+  "contributors": [
+    {
+      "name": "Tadeas Kmenta",
+      "email": "tadeas@zel.network"
+    },
+    {
+      "name": "Robert Andrew Andasan"
+    }
+  ],
+  "scripts": {
+    "start": "swagger-repo serve",
+    "build": "swagger-repo build -o web_deploy",
+    "test": "swagger-repo validate",
+    "gh-pages": "swagger-repo gh-pages"
+  },
+  "dependencies": {
+    "swagger-repo": "^2.0.0-rc.15"
+  }
+}
