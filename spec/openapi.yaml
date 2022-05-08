@@ -389,7 +389,153 @@ paths:
                       type: object
               example:
                 status: success
-                data: []
+                data: [
+                  {
+                    "daemon": {
+                      "info": {
+                        "version": 6000050,
+                        "protocolversion": 170018,
+                        "walletversion": 60000,
+                        "blocks": 1102467,
+                        "timeoffset": 0,
+                        "connections": 16,
+                        "proxy": "",
+                        "difficulty": 25130.53435221701,
+                        "testnet": false,
+                        "keypoololdest": 1650282920,
+                        "keypoolsize": 101,
+                        "paytxfee": 0,
+                        "relayfee": 1e-06,
+                        "errors": ""
+                      }
+                    },
+                    "node": {
+                      "status": {
+                        "status": "CONFIRMED",
+                        "collateral": "COutPoint(43c12f4e50a4d3751318246bc7595749b3c44163e5295801a63031b6b8213b98, 0)",
+                        "txhash": "43c12f4e50a4d3751318246bc7595749b3c44163e5295801a63031b6b8213b98",
+                        "outidx": "0",
+                        "ip": "94.130.70.88",
+                        "network": "ipv4",
+                        "added_height": 1102077,
+                        "confirmed_height": 1102080,
+                        "last_confirmed_height": 1102451,
+                        "last_paid_height": 0,
+                        "tier": "CUMULUS",
+                        "payment_address": "t1YeRhuE75a6SWvcBwxZDkamrs4TAUvzExB",
+                        "pubkey": "045daac4aae91481e731510ea28ed5dc1d6ed9712085fc45ff6aca9e782c5d12cd2eb9600c5060fc9a6b196eb7a0011e704991bec2e02dcdeed0c70ee5fe7643fe",
+                        "activesince": "1650284293",
+                        "lastpaid": "1516980000",
+                        "amount": "1000.00"
+                      }
+                    },
+                    "benchmark": {
+                      "info": {
+                        "version": "3.2.0",
+                        "rpcport": 16224
+                      },
+                      "status": {
+                        "status": "online",
+                        "benchmarking": "CUMULUS",
+                        "flux": "connected"
+                      },
+                      "bench": {
+                        "ipaddress": "94.130.70.88",
+                        "architecture": "amd64",
+                        "armboard": "",
+                        "status": "CUMULUS",
+                        "time": 1650332419,
+                        "real_cores": 4,
+                        "cores": 4,
+                        "ram": 7.8,
+                        "ssd": 220,
+                        "hdd": 0,
+                        "ddwrite": 1591,
+                        "totalstorage": 220,
+                        "disksinfo": [
+                          {
+                            "disk": "sda",
+                            "size": 220,
+                            "writespeed": 1591
+                          }
+                        ],
+                        "eps": 1824.6,
+                        "ping": 3.413000106811523,
+                        "download_speed": 934.52001953125,
+                        "upload_speed": 920.25,
+                        "bench_version": "1.0.20",
+                        "speed_version": "2.1.2",
+                        "error": ""
+                      }
+                    },
+                    "flux": {
+                      "version": "3.15.0",
+                      "ip": "94.130.70.88",
+                      "zelid": "1Pe2X7Brnz43pLs5Nh3Jh9xuCqkmnR8EnK",
+                      "cruxid": null,
+                      "timezone": "UTC",
+                      "dos": {
+                        "dosState": 0,
+                        "dosMessage": null
+                      }
+                    },
+                    "apps": {
+                      "fluxusage": "0.23500000",
+                      "runningapps": [
+                        {
+                          "Id": "83b9f4cd560e51adfcaeab809d745c47856e7f463d206051d3372b241ab16390",
+                          "Names": [
+                            "/flux_watchtower"
+                          ],
+                          "Image": "containrrr/watchtower",
+                          "ImageID": "sha256:333de6ea525af9137e1f14a5c1bfaa2e730adca97ab97f74d738dfa99967f14f",
+                          "Command": "/watchtower --cleanup --interval 20453",
+                          "Created": 1650283285,
+                          "Ports": [
+                            {
+                              "PrivatePort": 8080,
+                              "Type": "tcp"
+                            }
+                          ],
+                          "Labels": {
+                            "com.centurylinklabs.watchtower": "true"
+                          },
+                          "State": "running",
+                          "Status": "Up 14 hours"
+                        }
+                      ],
+                      "resources": {
+                        "appsCpusLocked": 0,
+                        "appsRamLocked": 0,
+                        "appsHddLocked": 0
+                      }
+                    },
+                    "geolocation": {
+                      "ip": "94.130.70.88",
+                      "continent": null,
+                      "continentCode": null,
+                      "country": "Germany",
+                      "countryCode": "DE",
+                      "region": "SN",
+                      "regionName": "Saxony",
+                      "lat": 50.475,
+                      "lon": 12.365,
+                      "org": "Hetzner"
+                    },
+                    "ip": "94.130.70.88",
+                    "addedHeight": 1102077,
+                    "confirmedHeight": 1102080,
+                    "lastConfirmedHeight": 1102329,
+                    "lastPaidHeight": 0,
+                    "tier": "CUMULUS",
+                    "paymentAddress": "t1YeRhuE75a6SWvcBwxZDkamrs4TAUvzExB",
+                    "activeSince": "1650284293",
+                    "collateralHash": "43c12f4e50a4d3751318246bc7595749b3c44163e5295801a63031b6b8213b98",
+                    "collateralIndex": 0,
+                    "roundTime": 1650329355560,
+                    "dataCollectedAt": 1650332927533
+                  },
+                ]
   /fluxversions:
     get:
       tags:
