@@ -74,7 +74,7 @@ paths:
         Note: If projection query param is not included by default all projections will be included. 
 
 
-        Note: Sample request GET https://stats.runonflux.io/fluxinfo?projection=daemon
+        Note: Sample projection request GET https://stats.runonflux.io/fluxinfo?projection=daemon
       operationId: fluxinfo
       responses:
         '200':
@@ -100,39 +100,257 @@ paths:
                         "version": 6000050,
                         "protocolversion": 170018,
                         "walletversion": 60000,
-                        "blocks": 1114873,
-                        "timeoffset": 0,
-                        "connections": 29,
-                        "proxy": "",
-                        "difficulty": 39720.23651105958,
-                        "testnet": false,
-                        "keypoololdest": 1648846206,
-                        "keypoolsize": 101,
-                        "paytxfee": 0,
-                        "relayfee": 1e-06,
-                        "errors": ""
-                      }
-                    },
-                  },
-                  {
-                    "daemon": {
-                      "info": {
-                        "version": 6000050,
-                        "protocolversion": 170018,
-                        "walletversion": 60000,
-                        "blocks": 1114873,
+                        "blocks": 1116065,
                         "timeoffset": 0,
                         "connections": 16,
                         "proxy": "",
-                        "difficulty": 39720.23651105958,
+                        "difficulty": 27419.45286019697,
                         "testnet": false,
-                        "keypoololdest": 1649797155,
+                        "keypoololdest": 1651265356,
                         "keypoolsize": 101,
                         "paytxfee": 0,
                         "relayfee": 1e-06,
                         "errors": ""
                       }
                     },
+                    "node": {
+                      "status": {
+                        "status": "CONFIRMED",
+                        "collateral": "COutPoint(08194c8cfb97d7c4613ae47b89ddf81935e08028b2f7a380f14021cd13c7ca50, 0)",
+                        "txhash": "08194c8cfb97d7c4613ae47b89ddf81935e08028b2f7a380f14021cd13c7ca50",
+                        "outidx": "0",
+                        "ip": "65.108.120.181:16157",
+                        "network": "",
+                        "added_height": 1079394,
+                        "confirmed_height": 1079397,
+                        "last_confirmed_height": 1115972,
+                        "last_paid_height": 1108713,
+                        "tier": "CUMULUS",
+                        "payment_address": "t1e7c7cXNx4aDcXcWLY17ZvkQVxUpSrj4in",
+                        "pubkey": "04f8e1d1a6049392089a64e8fcf606f1f8496eff322541eb0e7bbce466aa20ad983c0ee5e568d56ff2d09334b3541db0e2e36182ce033d668040365b535224ca9e",
+                        "activesince": "1647543614",
+                        "lastpaid": "1651087768",
+                        "amount": "1000.00"
+                      }
+                    },
+                    "benchmark": {
+                      "info": {
+                        "version": "3.2.0",
+                        "rpcport": 16224
+                      },
+                      "status": {
+                        "status": "online",
+                        "benchmarking": "CUMULUS",
+                        "flux": "connected"
+                      },
+                      "bench": {
+                        "ipaddress": "65.108.120.181:16157",
+                        "architecture": "amd64",
+                        "armboard": "",
+                        "status": "CUMULUS",
+                        "time": 1651973985,
+                        "real_cores": 2,
+                        "cores": 4,
+                        "ram": 7.8,
+                        "ssd": 230,
+                        "hdd": 0,
+                        "ddwrite": 299.51,
+                        "totalstorage": 230,
+                        "disksinfo": [
+                          {
+                            "disk": "sda",
+                            "size": 230,
+                            "writespeed": 299.51
+                          }
+                        ],
+                        "eps": 1793.16,
+                        "ping": 4.824999809265137,
+                        "download_speed": 905.1500244140625,
+                        "upload_speed": 872.3099975585938,
+                        "bench_version": "1.0.20",
+                        "speed_version": "2.1.2",
+                        "error": ""
+                      }
+                    },
+                    "flux": {
+                      "version": "3.16.0",
+                      "ip": "65.108.120.181:16157",
+                      "zelid": "1HHLQmbdMXooDL9PkXUoN1MtK1iM8Jbzqr",
+                      "cruxid": null,
+                      "timezone": "UTC",
+                      "dos": {
+                        "dosState": 0,
+                        "dosMessage": null
+                      }
+                    },
+                    "apps": {
+                      "fluxusage": "0.27500000",
+                      "runningapps": [
+                        {
+                          "Id": "0a501829d4577a17131ae0417ca17e96b276c26341ae53b654b10c42b7d6dbb7",
+                          "Names": [
+                            "/flux_watchtower"
+                          ],
+                          "Image": "containrrr/watchtower",
+                          "ImageID": "sha256:333de6ea525af9137e1f14a5c1bfaa2e730adca97ab97f74d738dfa99967f14f",
+                          "Command": "/watchtower --cleanup --interval 10890",
+                          "Created": 1651266197,
+                          "Ports": [
+                            {
+                              "PrivatePort": 8080,
+                              "Type": "tcp"
+                            }
+                          ],
+                          "Labels": {
+                            "com.centurylinklabs.watchtower": "true"
+                          },
+                          "State": "running",
+                          "Status": "Up 8 days"
+                        }
+                      ],
+                      "resources": {
+                        "appsCpusLocked": 0,
+                        "appsRamLocked": 0,
+                        "appsHddLocked": 0
+                      }
+                    },
+                    "geolocation": {
+                      "ip": "65.108.120.181",
+                      "continent": null,
+                      "continentCode": null,
+                      "country": "Finland",
+                      "countryCode": "FI",
+                      "region": "18",
+                      "regionName": "Uusimaa",
+                      "lat": 60.1719,
+                      "lon": 24.9347,
+                      "org": "Hetzner Online GmbH"
+                    },
+                    "ip": "65.108.120.181:16157",
+                    "addedHeight": 1079394,
+                    "confirmedHeight": 1079397,
+                    "lastConfirmedHeight": 1115972,
+                    "lastPaidHeight": 1108713,
+                    "tier": "CUMULUS",
+                    "paymentAddress": "t1e7c7cXNx4aDcXcWLY17ZvkQVxUpSrj4in",
+                    "activeSince": "1647543614",
+                    "collateralHash": "08194c8cfb97d7c4613ae47b89ddf81935e08028b2f7a380f14021cd13c7ca50",
+                    "collateralIndex": 0,
+                    "roundTime": 1651975613157,
+                    "appsHashesTotal": 2964,
+                    "hashesPresent": 2931,
+                    "scannedHeight": 1116065,
+                    "connectionsOut": [
+                      "94.130.70.88",
+                      "176.9.19.157",
+                      "142.132.250.168",
+                      "96.51.21.132",
+                      "65.43.222.98",
+                      "76.176.51.110",
+                      "65.108.79.59",
+                      "38.88.125.27",
+                      "89.58.40.213",
+                      "192.99.34.149",
+                      "162.55.85.204",
+                      "65.108.199.173",
+                      "202.61.197.168",
+                      "81.7.13.152",
+                      "185.216.176.168",
+                      "138.201.190.171",
+                      "45.142.177.32",
+                      "65.108.97.26",
+                      "188.2.191.120",
+                      "46.38.232.201",
+                      "95.216.33.227",
+                      "65.108.120.238",
+                      "95.216.124.211",
+                      "31.7.195.245",
+                      "5.39.11.88",
+                      "5.161.85.244",
+                      "46.38.233.51",
+                      "45.129.180.70",
+                      "65.108.96.163",
+                      "65.108.99.220",
+                      "65.21.168.147",
+                      "135.181.201.223",
+                      "72.210.11.158",
+                      "108.230.253.35",
+                      "142.132.250.246",
+                      "51.254.51.112",
+                      "123.172.51.77",
+                      "5.161.93.22",
+                      "91.244.197.227",
+                      "85.219.222.227",
+                      "185.30.117.12",
+                      "198.27.68.184",
+                      "88.119.251.55",
+                      "168.220.198.30",
+                      "185.216.177.54",
+                      "195.206.229.82",
+                      "138.75.41.233",
+                      "65.108.105.28",
+                      "82.66.157.171",
+                      "5.161.79.205"
+                    ],
+                    "connectionsIn": [
+                      "5.161.85.36",
+                      "65.21.207.40",
+                      "89.58.40.225",
+                      "164.92.155.158",
+                      "88.99.20.4",
+                      "65.108.12.229",
+                      "135.181.255.25",
+                      "202.61.204.166",
+                      "135.181.151.180",
+                      "185.136.186.247",
+                      "144.126.139.214",
+                      "65.108.131.80",
+                      "202.61.247.226",
+                      "198.27.103.201",
+                      "89.58.33.177",
+                      "146.255.194.244",
+                      "65.108.131.80",
+                      "194.61.28.27",
+                      "65.108.96.155",
+                      "51.77.76.127",
+                      "181.214.147.84",
+                      "76.239.131.28",
+                      "161.97.162.210",
+                      "37.221.192.234",
+                      "202.61.243.190",
+                      "92.151.55.144",
+                      "87.104.24.152",
+                      "167.114.174.224",
+                      "144.126.149.37",
+                      "65.108.218.66",
+                      "95.216.214.19",
+                      "89.58.32.242",
+                      "65.108.62.62",
+                      "65.108.79.24",
+                      "185.30.117.175",
+                      "74.105.84.127",
+                      "65.108.120.68",
+                      "65.108.143.158",
+                      "95.214.55.240",
+                      "5.161.79.25",
+                      "65.108.104.28",
+                      "146.255.194.242",
+                      "94.23.204.164",
+                      "92.151.55.144",
+                      "51.222.122.173",
+                      "94.16.111.37",
+                      "88.119.251.34",
+                      "185.150.18.13",
+                      "65.108.132.95",
+                      "89.58.42.83",
+                      "192.95.8.72",
+                      "5.161.87.118",
+                      "65.108.218.52",
+                      "95.217.219.133",
+                      "66.94.101.100",
+                      "135.181.57.52"
+                    ],
+                    "dataCollectedAt": 1651975618358
                   },
                 ]
   /fluxhistory/ip/ip=127.0.0.1:
