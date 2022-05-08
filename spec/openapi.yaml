@@ -59,22 +59,24 @@ servers:
 paths:
   /fluxinfo:
     get:
+      parameters:
+        - in: query
+          name: projection
+          schema:
+            type: string
+            enum: [ip, addedHeight, lastPaidHeight, tier, activeSince, confirmedHeight,
+              lastConfirmedHeight, collateralHash, collateralIndex, paymentAddress,
+              roundTime, dataCollectedAt, geolocation, daemon, node, benchmark,
+              flux, apps, appsHashesTotal, hashesPresent, scannedHeight, connectionsOut, connectionsIn, ""]
+            example: ip,tier
+          required: false
+          description: >-
+              Set of data that can be retrieved
       tags:
         - Flux Info
-      summary: Request
+      summary: All flux node information
       description: >-
-        Collect node information based on different projections namely
-        ip, addedHeight, lastPaidHeight, tier, activeSince, confirmedHeight,
-        lastConfirmedHeight, collateralHash, collateralIndex, paymentAddress,
-        roundTime, dataCollectedAt, geolocation, daemon, node, benchmark,
-        flux, apps, appsHashesTotal, hashesPresent, scannedHeight, connectionsOut
-        and connectionsIn.
-        
-        
-        Note: If projection query param is not included by default all projections will be included. 
-
-
-        Note: Sample projection request GET https://stats.runonflux.io/fluxinfo?projection=daemon
+        Collect node data based on different projections
       operationId: fluxinfo
       responses:
         '200':
@@ -353,16 +355,22 @@ paths:
                     "dataCollectedAt": 1651975618358
                   },
                 ]
-  /fluxhistory/ip/ip=127.0.0.1:
+  /fluxhistory/ip:
     get:
+      parameters:
+        - in: query
+          name: ip
+          schema:
+            type: string
+            example: 192.168.0.1
+          required: true
+          description: >-
+              Flux node IP for retriving it's history
       tags:
         - Flux History
-      summary: Request
+      summary: Flux node history using IP
       description: >-
-        Collect history information based on ip
-
-
-        Note: Query param is required
+        Collect node history
       operationId: fluxhistory
       responses:
         '200':
@@ -386,8 +394,8 @@ paths:
     get:
       tags:
         - Flux Versions
-      summary: Request
-      description: Collect all node information about flux versions
+      summary: All flux node version data
+      description: Collect all flux node versions
       operationId: fluxversions
       responses:
         '200':
@@ -424,8 +432,8 @@ paths:
     get:
       tags:
         - Flux Locations
-      summary: Request
-      description: Collect all information about flux node location
+      summary: All flux node location data
+      description: Collect all data about flux node location
       operationId: fluxlocations
       responses:
         '200':
@@ -478,8 +486,8 @@ paths:
     get:
       tags:
         - Flux Locations Now
-      summary: Request
-      description: Collect all information about flux node location
+      summary: All flux node location data
+      description: Collect all data about flux node location
       operationId: fluxlocationsnow
       responses:
         '200':
@@ -530,7 +538,7 @@ paths:
     get:
       tags:
         - Flux History Stats
-      summary: Request
+      summary: Total flux node per tier
       description: Collect all total nodes per tier at a specific round time
       operationId: fluxhistorystats
       responses:
@@ -564,8 +572,8 @@ paths:
     get:
       tags:
         - Stored Locations
-      summary: Request
-      description: Collect all stored location information
+      summary: All flux node stored location data
+      description: Collect all stored location dataa
       operationId: storedlocations
       responses:
         '200':
@@ -614,7 +622,7 @@ paths:
     get:
       tags:
         - Available Times
-      summary: Request
+      summary: All flux round time data
       description: Collect all roundtime data
       operationId: availabletimes
       responses:

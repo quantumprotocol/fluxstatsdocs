@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git://github.com/runonflux/fluxapidocs.git"
   },
-  "description": "Flux documentation",
+  "description": "Flux API documentation",
   "contributors": [
     {
       "name": "Tadeas Kmenta",
