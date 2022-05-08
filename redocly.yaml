@@ -1,8 +1,8 @@
 
-apiTitle: fluxdocs
+apiTitle: fluxapidocs
 splitSpec: false
 codeSamples: true
 swaggerUI: true
 travis: true
-repo: runonflux/fluxdocs
+repo: runonflux/fluxapidocs
 oasVersion: 3.0.0
