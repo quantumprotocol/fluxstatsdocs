@@ -57,7 +57,7 @@ tags:
 servers:
   - url: 'https://stats.runonflux.io/'
 paths:
-  /fluxinfo?projections=ip,node:
+  /fluxinfo:
     get:
       tags:
         - Flux Info
@@ -71,7 +71,10 @@ paths:
         and connectionsIn.
         
         
-        Note: If projection query param is not included by default all projections will be included
+        Note: If projection query param is not included by default all projections will be included. 
+
+
+        Note: Sample request GET https://stats.runonflux.io/fluxinfo?projection=daemon
       operationId: fluxinfo
       responses:
         '200':
@@ -86,6 +89,8 @@ paths:
                   data:
                     type: array
                     description: Data set based on projections
+                    items:
+                      type: object
               example:
                 status: success
                 data: [
@@ -108,7 +113,6 @@ paths:
                         "errors": ""
                       }
                     },
-                    "ip": "65.108.218.208"
                   },
                   {
                     "daemon": {
@@ -129,7 +133,6 @@ paths:
                         "errors": ""
                       }
                     },
-                    "ip": "65.108.142.240:16167"
                   },
                 ]
   /fluxhistory/ip/ip=127.0.0.1:
@@ -156,6 +159,8 @@ paths:
                   data:
                     type: array
                     description: Data set based on ip
+                    items:
+                      type: object
               example:
                 status: success
                 data: []
@@ -179,6 +184,8 @@ paths:
                   data:
                     type: array
                     description: Flux Version Node Information
+                    items:
+                      type: object
               example:
                 status: success
                 data: [
@@ -215,6 +222,8 @@ paths:
                   data:
                     type: array
                     description: Geolocation Node Information
+                    items:
+                      type: object
               example:
                 status: success
                 data: [
@@ -267,6 +276,8 @@ paths:
                   data:
                     type: array
                     description: Geolocation Node Information
+                    items:
+                      type: object
               example:
                 status: success
                 data: [
@@ -351,6 +362,8 @@ paths:
                   data:
                     type: array
                     description: Stored Location Information
+                    items:
+                      type: object
               example:
                 status: success
                 data: [
@@ -399,6 +412,8 @@ paths:
                   data:
                     type: array
                     description: Round Time Information
+                    items:
+                      type: number
               example:
                 status: success
                 data: [
