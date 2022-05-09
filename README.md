@@ -1,4 +1,4 @@
-# Flux API documentation OpenAPI Specification
+# Flux API OpenAPI Documentation
 [![Build Status](https://travis-ci.com/runonflux/fluxdocs.svg?branch=master)](https://travis-ci.com/runonflux/fluxapi)
 
 [Flux](https://github.com/runonflux/flux/)
