@@ -1,17 +1,17 @@
 {
-  "name": "fluxapidocs",
-  "version": "0.0.1",
+  "name": "fluxstatsdocs",
+  "version": "1.0.0",
   "author": "Flux Foundation",
   "license": "GNU AGPLv3",
   "repository": {
     "type": "git",
-    "url": "git://github.com/runonflux/fluxapidocs.git"
+    "url": "git://github.com/runonflux/fluxstatsdocs.git"
   },
-  "description": "Flux API documentation",
+  "description": "Flux Stats API documentation",
   "contributors": [
     {
       "name": "Tadeas Kmenta",
-      "email": "tadeas@zel.network"
+      "email": "tadeas@runonflux.io"
     },
     {
       "name": "Robert Andrew Andasan"

@@ -1,13 +1,13 @@
-# Flux API OpenAPI Documentation
-[![Build Status](https://travis-ci.com/runonflux/fluxdocs.svg?branch=master)](https://travis-ci.com/runonflux/fluxapi)
+# Flux Stats OpenAPI Documentation
+[![Build Status](https://travis-ci.com/runonflux/fluxdocs.svg?branch=master)](https://travis-ci.com/runonflux/fluxstats)
 
 [Flux](https://github.com/runonflux/flux/)
 
 ## Links
 
-- [Reference Documentation (ReDoc)](https://docs.fluxapi.runonflux.io)
-- [SwaggerUI](https://docs.fluxapi.runonflux.io/swagger-ui/)
-- OpenAPI Raw Files: [JSON](https://docs.fluxapi.runonflux.io/openapi.json) [YAML](https://docs.fluxapi.runonflux.io/openapi.yaml)
+- [Reference Documentation (ReDoc)](https://docs.fluxstats.runonflux.io)
+- [SwaggerUI](https://docs.fluxstats.runonflux.io/swagger-ui/)
+- OpenAPI Raw Files: [JSON](https://docs.fluxstats.runonflux.io/openapi.json) [YAML](https://docs.fluxstats.runonflux.io/openapi.yaml)
 
 **Warning:** All above links are updated only after Travis CI finishes deployment
 

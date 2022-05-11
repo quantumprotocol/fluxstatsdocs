@@ -1,42 +1,39 @@
 openapi: 3.0.0
 info:
-  version: 0.0.1
-  title: Flux API
+  version: 1.0.0
+  title: Flux Stats
   contact:
-    email: tadeas@zel.network
-    url: 'https://docs.fluxapi.runonflux.io'
+    email: tadeas@runonflux.io
+    url: 'https://docs.fluxstats.runonflux.io'
   license:
     name: GNU AGPLv3
     url: 'https://www.gnu.org/licenses/agpl-3.0.en.html'
   x-logo:
     url: 'https://raw.githubusercontent.com/runonflux/fluxdocs/master/flux.jpg'
   description: >-
-    This is an API documentation of calls available to be made to Flux API.
+    This is an API documentation of calls available to be made to Flux Stats.
     <br>
     GET Calls are available as both query and in order as path.
     <br>
-    Flux API is completely open source and we encourage everyone to feel free and
+    Flux Stats provides up to a month of statistics data of entire Flux network. We encourage everyone to feel free and
     contribute :)
     <br>
     Further questions or support join and ask in our [discord](https://discord.io/runonflux)
 
-
     # Introduction
 
-    Flux API is a collection of API's being used to collect
+    Flux Stats is a collection of API's being used to collect
     all data needed by Flux Stats Dashboard 
 
     # Getting Started with the API
 
     1. You can use browser directly to access the API's
 
-
-
     2. You can also use any client tools such as postman or soap ui to access the API's
 
 externalDocs:
-  description: Flux API
-  url: 'https://github.com/runonflux/fluxapi'
+  description: Flux Stats
+  url: 'https://github.com/runonflux/fluxstats'
 tags:
   - name: Flux Info
     description: Request that are neccessary for collecting node data
@@ -67,7 +64,7 @@ paths:
             enum: [ip, addedHeight, lastPaidHeight, tier, activeSince, confirmedHeight,
               lastConfirmedHeight, collateralHash, collateralIndex, paymentAddress,
               roundTime, dataCollectedAt, geolocation, daemon, node, benchmark,
-              flux, apps, appsHashesTotal, hashesPresent, scannedHeight, connectionsOut, connectionsIn, ""]
+              flux, apps, appsHashesTotal, hashesPresent, scannedHeight, connectionsOut, connectionsIn]
             example: ip,tier
           required: false
           description: >-
